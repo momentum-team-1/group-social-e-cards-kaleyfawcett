@@ -34,3 +34,25 @@ footer {
   margin: 5px;
   padding: 2px;
 }
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: lightgray; 
+  padding: 10px;
+  margin-bottom: 20px;
+  /* color: white; 
+  text-decoration: none; */
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* color: white;
+  text-decoration: none; */
+
+}

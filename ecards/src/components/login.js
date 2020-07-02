@@ -1,8 +1,8 @@
 /* globals localStorage */
 
 import React from 'react'
-import { getToken, getCards } from './Api'
-import './App.css'
+// import './App.css'
+import { getToken } from '../Api'
 
 class Login extends React.Component {
   constructor () {
@@ -11,25 +11,25 @@ class Login extends React.Component {
       username: localStorage.getItem('login_username') || '',
       password: '',
       token: localStorage.getItem('login_auth_token'),
-      error: null,
-      cards: []
+      error: null
+      // cards: []
     }
 
     this.handleLogin = this.handleLogin.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
   }
 
-  componentDidMount () {
-    if (this.state.token) {
-      getCards(this.state.token).then(cards => this.setState({ cards: cards }))
-    }
-  }
+  // componentDidMount () {
+  //   if (this.state.token) {
+  //     getCards(this.state.token).then(cards => this.setState({ cards: cards }))
+  //   }
+  // }
 
-  componentDidUpdate (prevProps, prevState) {
-    if (this.state.token && this.state.token !== prevState.token) {
-      getCards(this.state.token).then(cards => this.setState({ cards: cards }))
-    }
-  }
+  // componentDidUpdate (prevProps, prevState) {
+  //   if (this.state.token && this.state.token !== prevState.token) {
+  //     getCards(this.state.token).then(cards => this.setState({ cards: cards }))
+  //   }
+  // }
 
   handleLogin (event) {
     event.preventDefault()
@@ -64,9 +64,9 @@ class Login extends React.Component {
                 <div>
                   <h2>Welcome, {this.state.username}!</h2>
                   <button className='button' onClick={this.handleLogout}>Log out</button>
-                  <ul>
+                  {/* <ul>
                     {this.state.cards.map(card => <li key={card.id}>{card.message}</li>)}
-                  </ul>
+                  </ul> */}
                 </div>
               )
               : (
