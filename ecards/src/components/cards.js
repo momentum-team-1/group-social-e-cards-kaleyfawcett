@@ -29,7 +29,7 @@ class Cards extends React.Component {
         {/* {this.state.token} */}
         <div>
           <div>
-            {this.state.cards.map(card => <p className='container' key={card.id}>{card.message}</p>)}
+            {this.state.cards.map(card => <p className='container' key={card.id}><a href={`/cards/${card.id}`}>{card.message}</a></p>)}
           </div>
         </div>
       </div>
