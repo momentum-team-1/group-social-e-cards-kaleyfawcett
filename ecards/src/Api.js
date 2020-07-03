@@ -5,7 +5,7 @@ const request = axios.create({
 })
 
 export function getToken (username, password) {
-  return request.post('/auth/token/login/', {
+  return request.post('/auth/token/login', {
     username: username,
     password: password
   }).then(res => res.data.auth_token)

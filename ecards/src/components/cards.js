@@ -26,7 +26,7 @@ class Cards extends React.Component {
   render () {
     return (
       <div className='Cards'>
-        {/* {this.state.token} */}
+        {this.state.token}
         <div>
           <div>
             {this.state.cards.map(card => <p className='container' key={card.id}><a href={`/cards/${card.id}`}>{card.message}</a></p>)}
