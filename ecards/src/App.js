@@ -7,6 +7,14 @@ import ProfilePage from './components/profile'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      token: window.localStorage.getItem('login_auth_token')
+
+    }
+  }
+
   render () {
     return (
       <div className='App'>
@@ -14,8 +22,8 @@ class App extends React.Component {
         <Router>
           <Nav />
           <Switch>
-            <Route path='/auth/token/login/' component={Login} />
-            <Route path='/auth/users/me/' component={ProfilePage} />
+            <Route path='/login/' component={Login} token={this.state.token} setToken={token => this.setState({ token: token })} />
+            <Route path='/profile/' component={ProfilePage} />
             <Route path='/cards/all/' component={Cards} />
           </Switch>
         </Router>

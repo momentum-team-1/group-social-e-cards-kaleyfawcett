@@ -1,11 +1,19 @@
 import React from 'react'
 
 class ProfilePage extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      token: window.localStorage.getItem('login_auth_token'),
+      username: ''
+    }
+  }
+
   render () {
     return (
       <div>
         <div>
-            Username:
+          <p>Username: {this.props.username}</p>
         </div>
         <div>
             Email:
