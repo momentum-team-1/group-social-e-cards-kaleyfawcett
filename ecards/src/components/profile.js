@@ -1,3 +1,4 @@
+/* globals localStorage */
 import React from 'react'
 
 class ProfilePage extends React.Component {
@@ -5,7 +6,7 @@ class ProfilePage extends React.Component {
     super()
     this.state = {
       token: window.localStorage.getItem('login_auth_token'),
-      username: ''
+      username: localStorage.getItem('login_username') || ''
     }
   }
 
@@ -13,7 +14,7 @@ class ProfilePage extends React.Component {
     return (
       <div>
         <div>
-          <p>Username: {this.props.username}</p>
+          <p>Username: {this.state.username}</p>
         </div>
         <div>
             Email:

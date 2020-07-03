@@ -1,6 +1,5 @@
 import React from 'react'
 import { getCards } from '../Api'
-// import axios from 'axios'
 
 class Cards extends React.Component {
   constructor () {
@@ -18,11 +17,11 @@ class Cards extends React.Component {
     }
   }
 
-//   componentDidUpdate (prevProps, prevState) {
-//     if (this.state.token && this.state.token !== prevState.token) {
-//       getCards(this.state.token).then(cards => this.setState({ cards: cards }))
-//     }
-//   }
+  componentDidUpdate (prevProps, prevState) {
+    if (this.state.token && this.state.token !== prevState.token) {
+      getCards(this.state.token).then(cards => this.setState({ cards: cards }))
+    }
+  }
 
   render () {
     return (
