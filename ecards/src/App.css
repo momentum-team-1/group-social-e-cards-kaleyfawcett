@@ -1,6 +1,7 @@
 body {
   background: url(https://static.vecteezy.com/system/resources/previews/000/153/503/original/vector-grunge-air-mail-background.jpg);
   background-size: cover;
+  /* background: no-repeat; */
 }
 
 .App {

@@ -1,11 +1,11 @@
 import React from 'react'
-// import './App.css'
 import axios from 'axios'
 
 class createCard extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      token: window.localStorage.getItem('login_auth_token'),
       title: '',
       subject: ''
     }
@@ -21,19 +21,26 @@ class createCard extends React.Component {
     this.setState({ body: event.target.value })
   }
 
-  componentDidMount () {
+  handleSubmit (event) {
+    const cardPost = {
+      token: window.localStorage.getItem('login_auth_token')
+    //   card_name: this.state.title,
+    //   card_text: this.state.subject
+    }
     axios
-      .post('/api/Cards', {
-        title: this.state.title,
-        subject: this.state.subject
-      })
+      .post('https://ecards-api-ben.herokuapp.com/api/cards/', { cardPost })
+      .then(response =>
+        this.setState({
+          title: response.data, subject: response.data, token: window.localStorage.getItem('login_auth_token')
+        }))
+    event.preventDefault()
   }
 
   render () {
     return (
       <div>
         <div className='form-area'>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <br styles='clear:both' />
             <div className='form-group'>
               <input type='text' onChange={this.handleTitleChange} className='form-control' id='title' name='title' placeholder='Title' required />
@@ -43,7 +50,7 @@ class createCard extends React.Component {
               <textarea className='form-control' onChange={this.handleSubjectChange} type='textarea' id='subject' placeholder='Subject' maxLength='140' rows='7' />
             </div>
 
-            <button type='button' id='submit' name='submit' className='button'>Add Card</button>
+            <button type='submit' id='submit' name='submit' value='Submit' className='button'>Add Card</button>
           </form>
         </div>
       </div>
