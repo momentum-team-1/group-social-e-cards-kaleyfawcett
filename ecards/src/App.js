@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import Nav from './components/Nav'
 import Cards from './components/cards'
-import createCard from './components/createCard'
+import CreateCard from './components/createCard'
 import Login from './components/login'
 import ProfilePage from './components/profile'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -27,7 +27,9 @@ class App extends React.Component {
             <Route path='/profile/' component={ProfilePage} />
             <Route path='/cards/all/' component={Cards} />
             {/* <Route path='/cards/:id/' component={Card} /> */}
-            <Route path='/createcard/' component={createCard} />
+            <Route path='/createcard/'>
+              <CreateCard token={this.state.token} />
+            </Route>
           </Switch>
         </Router>
 

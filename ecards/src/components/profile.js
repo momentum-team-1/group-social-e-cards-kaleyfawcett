@@ -13,6 +13,19 @@ class ProfilePage extends React.Component {
     }
   }
 
+  // componentDidMount () {
+  //   if (this.state.token) {
+  //     getEmail(this.state.token)
+  //       .then(email => this.setState({ email: email }))
+  //   }
+  // }
+
+  // componentDidUpdate (prevProps, prevState) {
+  //   if (this.state.token && this.state.token !== prevState.token) {
+  //     getemail(this.state.token).then(cards => this.setState({ cards: cards }))
+  //   }
+  // }
+
   render () {
     return (
       <div>
