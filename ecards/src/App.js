@@ -26,6 +26,7 @@ class App extends React.Component {
             <Route path='/login/' component={Login} token={this.state.token} setToken={token => this.setState({ token: token })} />
             <Route path='/profile/' component={ProfilePage} />
             <Route path='/cards/all/' component={Cards} />
+            {/* <Route path='/cards/:id/' component={Card} /> */}
             <Route path='/createcard/' component={createCard} />
           </Switch>
         </Router>

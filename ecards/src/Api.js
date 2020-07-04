@@ -16,5 +16,8 @@ export function getCards (token) {
     headers: {
       Authorization: `Token ${token}`
     }
-  }).then(res => res.data.results)
+  }).then(res => {
+    console.log(res.data)
+    return res.data
+  })
 }

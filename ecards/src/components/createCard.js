@@ -10,7 +10,7 @@ class createCard extends React.Component {
       subject: ''
     }
     this.handleTitleChange = this.handleTitleChange.bind(this)
-    this.handleSubjecChange = this.handleSubjectChange.bind(this)
+    this.handleSubjectChange = this.handleSubjectChange.bind(this)
   }
 
   handleTitleChange (event) {
@@ -23,7 +23,7 @@ class createCard extends React.Component {
 
   componentDidMount () {
     axios
-      .post('/createCard', {
+      .post('/api/Cards', {
         title: this.state.title,
         subject: this.state.subject
       })
