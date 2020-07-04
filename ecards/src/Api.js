@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const request = axios.create({
-  baseURL: 'http://localhost:8000/api'
+  baseURL: 'https://ecards-api-ben.herokuapp.com/api/'
 })
 
 export function getToken (username, password) {

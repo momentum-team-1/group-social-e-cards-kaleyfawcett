@@ -6,7 +6,10 @@ class ProfilePage extends React.Component {
     super()
     this.state = {
       token: window.localStorage.getItem('login_auth_token'),
-      username: localStorage.getItem('login_username') || ''
+      username: localStorage.getItem('login_username') || '',
+      email: '',
+      first_name: '',
+      last_name: ''
     }
   }
 
@@ -17,10 +20,10 @@ class ProfilePage extends React.Component {
           <p>Username: {this.state.username}</p>
         </div>
         <div>
-            Email:
+          <p>Email: {this.state.email}</p>
         </div>
         <div>
-            Name:
+          <p>Name: {this.state.first_name}{this.state.last_name}</p>
         </div>
       </div>
     )

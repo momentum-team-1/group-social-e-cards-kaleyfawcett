@@ -23,7 +23,7 @@ class Login extends React.Component {
     getToken(this.state.username, this.state.password)
       .then(token => {
         this.setState({ token: token, password: '' })
-        this.props.setToken(token)
+        // this.props.setToken(token)
         localStorage.setItem('login_username', this.state.username)
         localStorage.setItem('login_auth_token', token)
       })
