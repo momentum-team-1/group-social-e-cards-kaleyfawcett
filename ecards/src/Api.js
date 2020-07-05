@@ -32,3 +32,14 @@ export function getUsersCards (token) {
     return res.data
   })
 }
+
+export function getUsersInfo (token) {
+  return request.get('/users/info', {
+    headers: {
+      Authorization: `Token ${token}`
+    }
+  }).then(res => {
+    console.log(res.data)
+    return res.data
+  })
+}

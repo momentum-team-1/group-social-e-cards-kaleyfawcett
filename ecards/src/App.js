@@ -8,12 +8,13 @@ import ProfilePage from './components/profile'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends React.Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       token: window.localStorage.getItem('login_auth_token')
 
     }
+    // const LoggedIn = props.LoggedIn
   }
 
   render () {

@@ -1,6 +1,6 @@
 /* globals localStorage */
 import React from 'react'
-import { getUsersCards } from '../Api'
+import { getUsersCards, getUsersInfo } from '../Api'
 
 class ProfilePage extends React.Component {
   constructor () {
@@ -8,11 +8,12 @@ class ProfilePage extends React.Component {
     this.state = {
       token: window.localStorage.getItem('login_auth_token'),
       username: localStorage.getItem('login_username') || '',
-      email: '',
+      email: localStorage.getItem('email') || '',
       first_name: '',
       last_name: '',
       cards: []
     }
+    this.handleUserInfo = this.handleUserInfo.bind(this)
   }
 
   componentDidMount () {
@@ -28,6 +29,14 @@ class ProfilePage extends React.Component {
     }
   }
 
+  handleUserInfo (event) {
+    getUsersInfo(this.state.email, this.state.first_name, this.state.last_name)
+      .then(token => {
+        this.setState({ token: token })
+        localStorage.setItem('login_auth_token', token)
+      })
+  }
+
   render () {
     return (
       <div>
@@ -35,13 +44,14 @@ class ProfilePage extends React.Component {
           <p>Username: {this.state.username}</p>
         </div>
         <div>
-          <p>Email: {this.state.email}</p>
+          Email: {this.state.email}
+          {/* {this.state.email.map(email => <p key={email.id}> </p>)} */}
         </div>
         <div>
           <p>Name: {this.state.first_name}{this.state.last_name}</p>
         </div>
         <div>
-          {this.state.cards.map(card => <p className='container' key={card.id}>Card: {card.card_text}</p>)}
+          {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.card_name}  <br />  Card: {card.card_text}</p>)}
         </div>
       </div>
     )

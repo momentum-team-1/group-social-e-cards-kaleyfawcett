@@ -21,20 +21,23 @@ body {
 }
 
 header {
-  margin-top: 25px;
   font-weight: bold;
   font-size: x-large;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 10px;
   font-family: Courier New, monospace;
 }
 
 footer {
   color: grey;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  padding: 5px;
 }
 
 .username {
@@ -79,10 +82,14 @@ nav {
 }
 
 .container {
-  padding: 10px 15px;
+  padding: 10px 30px;
   margin: 20px;
-  /* border-style: dotted; */
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-
+  width: 700px;
+  color: black;
+  background-color: whitesmoke;
 }

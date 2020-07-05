@@ -26,10 +26,10 @@ class Cards extends React.Component {
   render () {
     return (
       <div className='Cards'>
-        {this.state.token}
+        {/* {this.state.token} */}
         <div>
           <div>
-            {this.state.cards.map(card => <p className='container' key={card.id}> User: {card.user} Card: {card.card_text}</p>)}
+            {this.state.cards.map(card => <p className='container' key={card.id}> User: {card.user} <br /> Title: {card.card_name} <br /> Card: {card.card_text}</p>)}
           </div>
         </div>
       </div>
