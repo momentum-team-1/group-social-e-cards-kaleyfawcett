@@ -8,7 +8,7 @@ class ProfilePage extends React.Component {
     this.state = {
       token: window.localStorage.getItem('login_auth_token'),
       username: localStorage.getItem('login_username') || '',
-      email: localStorage.getItem('email') || '',
+      email: '',
       first_name: '',
       last_name: '',
       cards: []
@@ -33,7 +33,6 @@ class ProfilePage extends React.Component {
     getUsersInfo(this.state.email, this.state.first_name, this.state.last_name)
       .then(token => {
         this.setState({ token: token })
-        localStorage.setItem('login_auth_token', token)
       })
   }
 
