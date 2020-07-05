@@ -1,5 +1,6 @@
 /* globals localStorage */
 import React from 'react'
+import { getUsersCards } from '../Api'
 
 class ProfilePage extends React.Component {
   constructor () {
@@ -9,22 +10,23 @@ class ProfilePage extends React.Component {
       username: localStorage.getItem('login_username') || '',
       email: '',
       first_name: '',
-      last_name: ''
+      last_name: '',
+      cards: []
     }
   }
 
-  // componentDidMount () {
-  //   if (this.state.token) {
-  //     getEmail(this.state.token)
-  //       .then(email => this.setState({ email: email }))
-  //   }
-  // }
+  componentDidMount () {
+    if (this.state.token) {
+      getUsersCards(this.state.token)
+        .then(cards => this.setState({ cards: cards }))
+    }
+  }
 
-  // componentDidUpdate (prevProps, prevState) {
-  //   if (this.state.token && this.state.token !== prevState.token) {
-  //     getemail(this.state.token).then(cards => this.setState({ cards: cards }))
-  //   }
-  // }
+  componentDidUpdate (prevProps, prevState) {
+    if (this.state.token && this.state.token !== prevState.token) {
+      getUsersCards(this.state.token).then(cards => this.setState({ cards: cards }))
+    }
+  }
 
   render () {
     return (
@@ -37,6 +39,9 @@ class ProfilePage extends React.Component {
         </div>
         <div>
           <p>Name: {this.state.first_name}{this.state.last_name}</p>
+        </div>
+        <div>
+          {this.state.cards.map(card => <p className='container' key={card.id}>Card: {card.card_text}</p>)}
         </div>
       </div>
     )

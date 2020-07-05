@@ -6,7 +6,6 @@ class CreateCard extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-    //   token: window.localStorage.getItem('login_auth_token'),
       title: '',
       subject: '',
       created: false
@@ -26,7 +25,6 @@ class CreateCard extends React.Component {
 
   handleSubmit (event) {
     event.preventDefault()
-    // const Token = 'login_auth_token'
     axios
       .post('https://ecards-api-ben.herokuapp.com/api/cards/', {
         card_name: this.state.title,

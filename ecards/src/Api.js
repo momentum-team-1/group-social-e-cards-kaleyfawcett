@@ -21,3 +21,14 @@ export function getCards (token) {
     return res.data
   })
 }
+
+export function getUsersCards (token) {
+  return request.get('/cards/own', {
+    headers: {
+      Authorization: `Token ${token}`
+    }
+  }).then(res => {
+    console.log(res.data)
+    return res.data
+  })
+}
