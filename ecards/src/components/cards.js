@@ -6,7 +6,8 @@ class Cards extends React.Component {
     super()
     this.state = {
       cards: [],
-      token: window.localStorage.getItem('login_auth_token')
+      token: window.localStorage.getItem('login_auth_token'),
+      count: 0
     }
   }
 
@@ -23,13 +24,20 @@ class Cards extends React.Component {
     }
   }
 
+  LikeButtonCount () {
+    const newCount = this.state.count + 1
+    this.setState({
+      count: newCount
+    })
+  }
+
   render () {
     return (
       <div className='Cards'>
         {/* {this.state.token} */}
         <div>
           <div>
-            {this.state.cards.map(card => <p className='container' key={card.id}> User: {card.user} <br /> Title: {card.card_name} <br /> Card: {card.card_text}</p>)}
+            {this.state.cards.map(card => <p className='container' key={card.id}> User: {card.user} <br /> Title: {card.card_name} <br /> Card: {card.card_text} <br /> <button handleOnClick={this.LikeButtonCount}> ❤ Like: {this.state.count} </button></p>)}
           </div>
         </div>
       </div>

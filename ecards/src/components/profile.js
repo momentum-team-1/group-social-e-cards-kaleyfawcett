@@ -41,7 +41,7 @@ class ProfilePage extends React.Component {
           Email: {this.state.email}
           </div>
           <div>
-            <p>Name: {this.state.first_name}{this.state.last_name}</p>
+            <p>Name: {this.state.first_name} {this.state.last_name}</p>
           </div>
         </div>
         <div>
