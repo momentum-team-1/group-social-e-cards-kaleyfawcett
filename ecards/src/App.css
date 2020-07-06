@@ -1,7 +1,8 @@
 body {
-  background: url(https://static.vecteezy.com/system/resources/previews/000/153/503/original/vector-grunge-air-mail-background.jpg);
+  background: url(https://www.tibco.com/blog/wp-content/uploads/2014/07/bigstock-Business-background-with-drawn-50509232A900.jpg);
   background-size: cover;
   /* background: no-repeat; */
+  /* https://static.vecteezy.com/system/resources/previews/000/153/503/original/vector-grunge-air-mail-background.jpg */
 }
 
 .App {
@@ -22,13 +23,14 @@ body {
 
 header {
   font-weight: bold;
-  font-size: x-large;
+  font-size: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
   margin-bottom: 10px;
   font-family: Courier New, monospace;
+  color: white;
 }
 
 footer {
@@ -92,4 +94,11 @@ nav {
   width: 700px;
   color: black;
   background-color: whitesmoke;
+}
+
+.container2 {
+  background: #e9d0af;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

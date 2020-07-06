@@ -13,7 +13,6 @@ class ProfilePage extends React.Component {
       last_name: '',
       cards: []
     }
-    this.handleUserInfo = this.handleUserInfo.bind(this)
   }
 
   componentDidMount () {
@@ -21,6 +20,8 @@ class ProfilePage extends React.Component {
       getUsersCards(this.state.token)
         .then(cards => this.setState({ cards: cards }))
     }
+    getUsersInfo(this.state.token)
+      .then(data => this.setState({ email: data.email, first_name: data.first_name, last_name: data.last_name }))
   }
 
   componentDidUpdate (prevProps, prevState) {
@@ -29,25 +30,19 @@ class ProfilePage extends React.Component {
     }
   }
 
-  handleUserInfo (event) {
-    getUsersInfo(this.state.email, this.state.first_name, this.state.last_name)
-      .then(token => {
-        this.setState({ token: token })
-      })
-  }
-
   render () {
     return (
       <div>
-        <div>
-          <p>Username: {this.state.username}</p>
-        </div>
-        <div>
+        <div className='container2'>
+          <div>
+            <p>Username: {this.state.username}</p>
+          </div>
+          <div>
           Email: {this.state.email}
-          {/* {this.state.email.map(email => <p key={email.id}> </p>)} */}
-        </div>
-        <div>
-          <p>Name: {this.state.first_name}{this.state.last_name}</p>
+          </div>
+          <div>
+            <p>Name: {this.state.first_name}{this.state.last_name}</p>
+          </div>
         </div>
         <div>
           {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.card_name}  <br />  Card: {card.card_text}</p>)}
