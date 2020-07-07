@@ -27,8 +27,8 @@ class CreateCard extends React.Component {
     event.preventDefault()
     axios
       .post('https://brown-shoe.herokuapp.com/api/cards/', {
-        card_name: this.state.title,
-        card_text: this.state.message
+        title: this.state.title,
+        message: this.state.message
       },
       {
         headers: {

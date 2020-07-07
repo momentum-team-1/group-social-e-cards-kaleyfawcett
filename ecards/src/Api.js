@@ -23,23 +23,23 @@ export function getCards (token) {
 }
 
 export function getUsersCards (token) {
-  return request.get('/cards/my_cards', {
+  return request.get('/cards/my_cards/', {
     headers: {
       Authorization: `Token ${token}`
     }
   }).then(res => {
-    console.log(res.data)
-    return res.data
+    // console.log(res.data)
+    return res.data.results
   })
 }
 
 export function getUsersInfo (token) {
-  return request.get('/user/info', {
+  return request.get('/user/info/', {
     headers: {
       Authorization: `Token ${token}`
     }
   }).then(res => {
-    console.log(res.data)
+    // console.log(res.data)
     return res.data
   })
 }

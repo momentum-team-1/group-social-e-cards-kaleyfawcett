@@ -31,6 +31,7 @@ class ProfilePage extends React.Component {
   }
 
   render () {
+    console.log("cards", this.state.cards)
     return (
       <div>
         <div className='container2'>
