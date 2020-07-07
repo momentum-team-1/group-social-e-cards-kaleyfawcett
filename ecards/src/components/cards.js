@@ -37,7 +37,7 @@ class Cards extends React.Component {
         {/* {this.state.token} */}
         <div>
           <div>
-            {this.state.cards.map(card => <p className='container' key={card.id}> User: {card.user} <br /> Title: {card.card_name} <br /> Card: {card.card_text} <br /> <button handleOnClick={this.LikeButtonCount}> ❤ Like: {this.state.count} </button></p>)}
+            {this.state.cards.map(card => <p className='container' key={card.id}> User: {card.user} <br /> Title: {card.title} <br /> Card: {card.message} <br /> <button handleOnClick={this.LikeButtonCount}> ❤ Like: {this.state.count} </button></p>)}
           </div>
         </div>
       </div>

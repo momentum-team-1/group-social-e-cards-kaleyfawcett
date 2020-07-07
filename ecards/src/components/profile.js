@@ -7,7 +7,7 @@ class ProfilePage extends React.Component {
     super()
     this.state = {
       token: window.localStorage.getItem('login_auth_token'),
-      username: localStorage.getItem('login_username') || '',
+      user: localStorage.getItem('login_username') || '',
       email: '',
       first_name: '',
       last_name: '',
@@ -35,7 +35,7 @@ class ProfilePage extends React.Component {
       <div>
         <div className='container2'>
           <div>
-            <p>Username: {this.state.username}</p>
+            <p>Username: {this.state.user}</p>
           </div>
           <div>
           Email: {this.state.email}
@@ -45,7 +45,7 @@ class ProfilePage extends React.Component {
           </div>
         </div>
         <div>
-          {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.card_name}  <br />  Card: {card.card_text}</p>)}
+          {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.title}  <br />  Card: {card.message}</p>)}
         </div>
       </div>
     )

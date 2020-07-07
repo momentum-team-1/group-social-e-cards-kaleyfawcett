@@ -14,7 +14,6 @@ class App extends React.Component {
       token: window.localStorage.getItem('login_auth_token')
 
     }
-    // const LoggedIn = props.LoggedIn
   }
 
   render () {
@@ -25,6 +24,9 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Route path='/login/' component={Login} token={this.state.token} setToken={token => this.setState({ token: token })} />
+            {/* {this.state.token
+              ? <Route to='/cards/all/' component={Cards} />
+              : <Redirect path='/login/' component={Login} />} */}
             <Route path='/cards/all/' component={Cards} />
             <Route path='/profile/' component={ProfilePage} />
             <Route path='/createcard/'>

@@ -7,7 +7,7 @@ class CreateCard extends React.Component {
     super(props)
     this.state = {
       title: '',
-      subject: '',
+      message: '',
       created: false
     }
     this.handleTitleChange = this.handleTitleChange.bind(this)
@@ -20,15 +20,15 @@ class CreateCard extends React.Component {
   }
 
   handleSubjectChange (event) {
-    this.setState({ subject: event.target.value })
+    this.setState({ message: event.target.value })
   }
 
   handleSubmit (event) {
     event.preventDefault()
     axios
-      .post('https://ecards-api-ben.herokuapp.com/api/cards/', {
+      .post('https://brown-shoe.herokuapp.com/api/cards/', {
         card_name: this.state.title,
-        card_text: this.state.subject
+        card_text: this.state.message
       },
       {
         headers: {
@@ -53,7 +53,7 @@ class CreateCard extends React.Component {
             </div>
 
             <div className='form-group'>
-              <textarea className='form-control' onChange={this.handleSubjectChange} value={this.state.subject} type='textarea' id='subject' placeholder='Subject' maxLength='300' rows='15' />
+              <textarea className='form-control' onChange={this.handleSubjectChange} value={this.state.message} type='textarea' id='subject' placeholder='Subject' maxLength='300' rows='15' />
             </div>
 
             <button type='submit' id='submit' name='submit' value='Submit' className='button'>Add Card</button>

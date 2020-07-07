@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const request = axios.create({
-  baseURL: 'https://ecards-api-ben.herokuapp.com/api/'
+  baseURL: 'https://brown-shoe.herokuapp.com/api/'
 })
 
 export function getToken (username, password) {
@@ -12,18 +12,18 @@ export function getToken (username, password) {
 }
 
 export function getCards (token) {
-  return request.get('/cards', {
+  return request.get('/cards/', {
     headers: {
       Authorization: `Token ${token}`
     }
   }).then(res => {
-    console.log(res.data)
-    return res.data
+    console.log(res.data.results)
+    return res.data.results
   })
 }
 
 export function getUsersCards (token) {
-  return request.get('/cards/own', {
+  return request.get('/cards/my_cards', {
     headers: {
       Authorization: `Token ${token}`
     }
@@ -34,7 +34,7 @@ export function getUsersCards (token) {
 }
 
 export function getUsersInfo (token) {
-  return request.get('/users/info', {
+  return request.get('/user/info', {
     headers: {
       Authorization: `Token ${token}`
     }
