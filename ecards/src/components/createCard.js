@@ -1,3 +1,4 @@
+/* globals localStorage */
 import React from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
@@ -6,6 +7,8 @@ class CreateCard extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      token: window.localStorage.getItem('login_auth_token'),
+      user: localStorage.getItem('login_username') || '',
       title: '',
       message: '',
       created: false

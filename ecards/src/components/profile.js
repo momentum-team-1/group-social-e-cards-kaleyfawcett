@@ -23,7 +23,8 @@ class ProfilePage extends React.Component {
     getUsersInfo(this.state.token)
       .then(data => this.setState({ email: data.email, first_name: data.first_name, last_name: data.last_name }))
   }
-  //     deleteCard()
+  //     deleteCard(this.state.token)
+  //     .then()
   // }
 
   componentDidUpdate (prevProps, prevState) {
@@ -48,7 +49,7 @@ class ProfilePage extends React.Component {
         </div>
         <div>
           <div>
-            {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.title}  <br />  Card: {card.message} <button type='sumbit' className='deleteButton' handleOnClick={this.deleteCard}>Delete</button></p>)}
+            {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.title}  <br />  Card: {card.message} <button type='submit' className='deleteButton' handleOnClick={this.deleteCard}>Delete</button></p>)}
           </div>
         </div>
       </div>

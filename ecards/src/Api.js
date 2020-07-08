@@ -12,7 +12,7 @@ export function getToken (username, password) {
 }
 
 export function getCards (token) {
-  return request.get('/cards/', {
+  return request.get('/cards/all_cards/', {
     headers: {
       Authorization: `Token ${token}`
     }
@@ -54,24 +54,24 @@ export function deleteCard (token, cardId) {
   })
 }
 
-// export function getFriendsList (token) {
-//   return request.get('/friend_count/', {
-//     headers: {
-//       Authorization: `Token ${token}`
-//     }
-//   }).then(res => {
-//     // console.log(res.data)
-//     return res.data
-//   })
-// }
+export function getFriendsList (token) {
+  return request.get('/friends/', {
+    headers: {
+      Authorization: `Token ${token}`
+    }
+  }).then(res => {
+    // console.log(res.data)
+    return res.data
+  })
+}
 
-// export function getFriendsCards (token) {
-//   return request.get('cards/friends_cards/', {
-//     headers: {
-//       Authorization: `Token ${token}`
-//     }
-//   }).then(res => {
-//     // console.log(res.data)
-//     return res.data
-//   })
-// }
+export function getFriendsCards (token) {
+  return request.get('/cards/friends_cards/', {
+    headers: {
+      Authorization: `Token ${token}`
+    }
+  }).then(res => {
+    console.log('getfriends', res.data)
+    return res.data
+  })
+}
