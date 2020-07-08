@@ -17,7 +17,7 @@ export function getCards (token) {
       Authorization: `Token ${token}`
     }
   }).then(res => {
-    console.log(res.data.results)
+    // console.log(res.data.results)
     return res.data.results
   })
 }
@@ -43,3 +43,35 @@ export function getUsersInfo (token) {
     return res.data
   })
 }
+
+export function deleteCard (token, cardId) {
+  return request.delete(`/cards/${cardId}/`, {
+    headers: {
+      Authorization: `Token ${token}`
+    }
+  }).then(response => {
+    console.log(response.data)
+  })
+}
+
+// export function getFriendsList (token) {
+//   return request.get('/friend_count/', {
+//     headers: {
+//       Authorization: `Token ${token}`
+//     }
+//   }).then(res => {
+//     // console.log(res.data)
+//     return res.data
+//   })
+// }
+
+// export function getFriendsCards (token) {
+//   return request.get('cards/friends_cards/', {
+//     headers: {
+//       Authorization: `Token ${token}`
+//     }
+//   }).then(res => {
+//     // console.log(res.data)
+//     return res.data
+//   })
+// }

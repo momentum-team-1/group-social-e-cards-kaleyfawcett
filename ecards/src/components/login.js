@@ -48,13 +48,13 @@ class Login extends React.Component {
           {
             this.state.token
               ? (
-                <div>
+                <div className='container'>
                   <h2>Welcome, {this.state.username}!</h2>
                   <button className='button' onClick={this.handleLogout}>Log out</button>
                 </div>
               )
               : (
-                <form onSubmit={this.handleLogin}>
+                <form onSubmit={this.handleLogin} className='container'>
                   <div className='error'>{this.state.error}</div>
                   <div>
                     <label htmlFor='username' className='username'>Username: </label>

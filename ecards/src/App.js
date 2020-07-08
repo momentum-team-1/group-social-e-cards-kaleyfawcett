@@ -5,6 +5,7 @@ import Cards from './components/cards'
 import CreateCard from './components/createCard'
 import Login from './components/login'
 import ProfilePage from './components/profile'
+// import FollowFriends from './components/Friends'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends React.Component {
@@ -29,13 +30,14 @@ class App extends React.Component {
               : <Redirect path='/login/' component={Login} />} */}
             <Route path='/cards/all/' component={Cards} />
             <Route path='/profile/' component={ProfilePage} />
-            <Route path='/createcard/'>
-              <CreateCard token={this.state.token} />
-            </Route>
+            {/* <Route patth='/friends/' component={FollowFriends} /> */}
+            <Route path='/createcard/' component={CreateCard} />
+            <CreateCard token={this.state.token} />
+            {/* </Route> */}
           </Switch>
         </Router>
 
-        <footer> Created by Sarah Akus and Kaley Fawcett</footer>
+        <footer className='footer'> Created by Sarah Akus and Kaley Fawcett</footer>
       </div>
     )
   }

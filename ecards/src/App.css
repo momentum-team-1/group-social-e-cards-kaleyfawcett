@@ -1,7 +1,7 @@
 body {
-  background: url(https://www.tibco.com/blog/wp-content/uploads/2014/07/bigstock-Business-background-with-drawn-50509232A900.jpg);
+  background: url(https://i.pinimg.com/originals/b2/a8/42/b2a842a1336c2a2981b4a7339d31f174.jpg);
   background-size: cover;
-  /* background: no-repeat; */
+  background-size: no-repeat;
   /* https://static.vecteezy.com/system/resources/previews/000/153/503/original/vector-grunge-air-mail-background.jpg */
 }
 
@@ -14,6 +14,8 @@ body {
   background-color: white;
   color: black;
   border: 2px solid grey; 
+  text-decoration: none;
+  padding: 5px;
 }
 
 .button:hover {
@@ -23,6 +25,7 @@ body {
 
 header {
   font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-size: 50px;
   display: flex;
   justify-content: center;
@@ -35,6 +38,7 @@ header {
 
 footer {
   color: grey;
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +47,7 @@ footer {
 }
 
 .username {
-  margin: 5px;
+  margin: 3px;
   padding: 0px;
 }
 
@@ -60,8 +64,6 @@ nav {
   background: #e9d0af;
   padding: 10px;
   margin-bottom: 20px;
-  /* color: white; 
-  text-decoration: none; */
 }
 
 .nav-links {
@@ -69,8 +71,6 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* color: white;
-  text-decoration: none; */
 
 }
 
@@ -84,7 +84,7 @@ nav {
 }
 
 .container {
-  padding: 10px 30px;
+  padding: 20px 30px;
   margin: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -101,4 +101,10 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.deleteButton {
+  padding: 5px;
+  margin: 10px;
+  font-size: 11px;
 }
