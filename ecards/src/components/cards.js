@@ -18,7 +18,7 @@ class Cards extends React.Component {
 
   AddFriend (username) {
     axios
-      .post('https://brown-shoe.herokuapp.com/api/friend/', {
+      .post('https://brown-shoe.herokuapp.com/api/friends/', {
         user: username
       },
       {
@@ -40,10 +40,9 @@ class Cards extends React.Component {
   render () {
     return (
       <div className='Cards'>
-        {/* {this.props.token} */}
         <div>
           <div>
-            {this.state.cards.map(card => <p className='container' key={card.id}> User: {card.username} <br /> Title: {card.title} <br /> Quote: {card.message} <br /> <button handleOnClick={this.LikeButtonCount}> ❤ Like: {this.state.count} </button> <button onClick={() => this.AddFriend(card.user)}> Follow </button></p>)}
+            {this.state.cards.map(card => <p className='container' key={card.id}> User: {card.username} <br /> Title: {card.title} <br /> Quote: {card.message} <br /> <button handleOnClick={this.LikeButtonCount}> ❤ Like: {this.state.count} </button> <button onClick={() => this.AddFriend(card.username)}> Follow User </button></p>)}
           </div>
         </div>
       </div>

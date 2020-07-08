@@ -60,7 +60,7 @@ export function getFriendsList (token) {
       Authorization: `Token ${token}`
     }
   }).then(res => {
-    // console.log(res.data)
+    console.log('friendslist', res.data)
     return res.data
   })
 }

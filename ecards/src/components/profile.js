@@ -49,7 +49,7 @@ class ProfilePage extends React.Component {
         </div>
         <div>
           <div>
-            {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.title}  <br />  Card: {card.message} <button type='submit' className='deleteButton' handleOnClick={this.deleteCard}>Delete</button></p>)}
+            {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.title}  <br />  Quote: {card.message} <button type='submit' className='deleteButton' handleOnClick={this.deleteCard}>Delete</button></p>)}
           </div>
         </div>
       </div>

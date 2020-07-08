@@ -1,7 +1,8 @@
 body {
-  background: url(https://i.pinimg.com/originals/b2/a8/42/b2a842a1336c2a2981b4a7339d31f174.jpg);
+  background: url(https://www.theopennotebook.com/wp-content/uploads/2016/03/shutterstock_182727164.jpg);
   background-size: cover;
   background-size: no-repeat;
+  background-size: contain;
   /* https://static.vecteezy.com/system/resources/previews/000/153/503/original/vector-grunge-air-mail-background.jpg */
 }
 
@@ -35,6 +36,12 @@ header {
   font-family: Courier New, monospace;
   color: white;
 }
+
+h3 {
+  color:white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 
 footer {
   color: grey;
