@@ -47,7 +47,7 @@ class ProfilePage extends React.Component {
         </div>
         <div>
           <div>
-            {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.title}  <br />  Quote: {card.message}</p>)}
+            {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.title}  <br />  <br /> Quote: {card.message}</p>)}
           </div>
         </div>
       </div>

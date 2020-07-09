@@ -59,7 +59,7 @@ class CreateCard extends React.Component {
               <textarea className='form-control' onChange={this.handleSubjectChange} value={this.state.message} type='textarea' id='subject' placeholder='Subject' maxLength='300' rows='15' />
             </div>
 
-            <button type='submit' id='submit' name='submit' value='Submit' className='button'>Add Card</button>
+            <button type='submit' id='submit' name='submit' value='Submit' className='button'>Add Quote Card</button>
           </form>
         </div>
       </div>
