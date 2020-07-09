@@ -10,7 +10,6 @@ function Nav () {
   return (
     <nav>
       <div className='nav-links'>
-        {/* <p><Link to='/login/'>Login</Link></p> */}
         <p><Link to='/cards/all/' className='button'>All Cards</Link></p>
         <p><Link to='/profile/' className='button'>Profile</Link></p>
         <p><Link to='/createcard/' className='button'>Create Card</Link></p>

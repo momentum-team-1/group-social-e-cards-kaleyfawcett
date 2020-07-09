@@ -26,9 +26,6 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Route path='/login/' component={Login} token={this.state.token} setToken={token => this.setState({ token: token })} />
-            {/* {this.state.token
-              ? <Route to='/cards/all/' component={Cards} />
-              : <Redirect path='/login/' component={Login} />} */}
             <Route path='/cards/all/'>
               <Cards token={this.state.token} />
             </Route>

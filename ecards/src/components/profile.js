@@ -1,6 +1,6 @@
 /* globals localStorage */
 import React from 'react'
-import { getUsersCards, getUsersInfo, deleteCard } from '../Api'
+import { getUsersCards, getUsersInfo } from '../Api'
 
 class ProfilePage extends React.Component {
   constructor () {
@@ -23,9 +23,7 @@ class ProfilePage extends React.Component {
     getUsersInfo(this.state.token)
       .then(data => this.setState({ email: data.email, first_name: data.first_name, last_name: data.last_name }))
   }
-  //     deleteCard(this.state.token)
-  //     .then()
-  // }
+
 
   componentDidUpdate (prevProps, prevState) {
     if (this.state.token && this.state.token !== prevState.token) {
@@ -49,7 +47,7 @@ class ProfilePage extends React.Component {
         </div>
         <div>
           <div>
-            {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.title}  <br />  Quote: {card.message} <button type='submit' className='deleteButton' handleOnClick={this.deleteCard}>Delete</button></p>)}
+            {this.state.cards.map(card => <p className='container' key={card.id}> Title: {card.title}  <br />  Quote: {card.message}</p>)}
           </div>
         </div>
       </div>

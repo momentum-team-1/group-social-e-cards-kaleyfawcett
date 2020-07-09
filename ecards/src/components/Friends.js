@@ -30,7 +30,7 @@ class FollowFriends extends React.Component {
           </div>
         </div>
         <div>
-          {this.state.cards.map(card => <p className='container' key={card.id}> Friend: {card.username} <br /> Title: {card.title}  <br />  Card: {card.message}</p>)}
+          {this.state.cards.map(card => <p className='container' key={card.id}> Friend: {card.username} <br /> Title: {card.title}  <br />  Quote: {card.message}</p>)}
         </div>
       </div>
 

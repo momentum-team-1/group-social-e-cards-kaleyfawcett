@@ -44,16 +44,6 @@ export function getUsersInfo (token) {
   })
 }
 
-export function deleteCard (token, cardId) {
-  return request.delete(`/cards/${cardId}/`, {
-    headers: {
-      Authorization: `Token ${token}`
-    }
-  }).then(response => {
-    console.log(response.data)
-  })
-}
-
 export function getFriendsList (token) {
   return request.get('/friends/', {
     headers: {

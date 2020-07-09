@@ -6,8 +6,7 @@ class Cards extends React.Component {
   constructor () {
     super()
     this.state = {
-      cards: [],
-      count: 0
+      cards: []
     }
   }
 
@@ -30,19 +29,12 @@ class Cards extends React.Component {
         this.setState({ created: true }))
   }
 
-  LikeButtonCount () {
-    const newCount = this.state.count + 1
-    this.setState({
-      count: newCount
-    })
-  }
-
   render () {
     return (
       <div className='Cards'>
         <div>
           <div>
-            {this.state.cards.map(card => <p className='container' key={card.id}> User: {card.username} <br /> Title: {card.title} <br /> Quote: {card.message} <br /> <button handleOnClick={this.LikeButtonCount}> ❤ Like: {this.state.count} </button> <button onClick={() => this.AddFriend(card.username)}> Follow User </button></p>)}
+            {this.state.cards.map(card => <p className='container' key={card.id}> User: {card.username} <br /> Title: {card.title} <br /> Quote: {card.message} <br /> <br /> <button onClick={() => this.AddFriend(card.username)}> Follow User </button></p>)}
           </div>
         </div>
       </div>
